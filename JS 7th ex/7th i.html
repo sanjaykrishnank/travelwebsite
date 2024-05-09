@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html >
+<head>
+<title>717823I206 bg clr change</title>
+</head>
+<body>
+<h2 style="text-align: center;">Change Background Color</h2><p style="text-align: center;">
+<button  onclick="changeBackgroundColor()"> Change Background Color</button></p>
+<script>
+function changeBackgroundColor() {
+    var randomColor = '#' + Math.floor(Math.random()*16777257).toString(16);
+        document.body.style.backgroundColor = randomColor;
+}
+</script>
+</body>
+</html>

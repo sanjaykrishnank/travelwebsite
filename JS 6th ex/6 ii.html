@@ -1,0 +1,48 @@
+<html >
+<head>
+<title>717823I238 Date valid</title>
+<style>
+.error {
+  color: red;
+}
+</style>
+</head>
+<body>
+<h2>Date Validation</h2>
+<form id="dateForm">
+  <label for="date">Enter a date (MM/DD/YYYY):</label>
+  <input type="text" id="date" name="date" style="color: blue;">
+  <span class="error" id="dateError"></span><br>
+  <button style="align-items: center;" type="submit">Submit</button>
+</form>
+<script>
+const form = document.getElementById('dateForm');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const dateInput = document.getElementById('date').value;
+  const dateError = document.getElementById('dateError');
+  
+  dateError.textContent = '';
+  
+  if (!isValidDate(dateInput)) {
+    dateError.textContent = 'Please enter a valid date in the format MM/DD/YYYY';
+    return;
+  }
+  const enteredDate = new Date(dateInput);
+  const minDate = new Date('2000-01-01'); 
+  const maxDate = new Date('2030-12-31'); 
+  
+  if (enteredDate < minDate || enteredDate > maxDate) {
+    dateError.textContent = 'Please enter a date between 01/01/2000 and 12/31/2030';
+    return;
+  }
+  alert('Date is valid and within range!');
+});
+function isValidDate(dateString) {
+  const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/(19|20)\d{2}$/;
+  return dateRegex.test(dateString);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>717823I206 Image Hover</title>
+<style>
+    #imageContainer {
+        text-align: center;
+    }
+    #message {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h2> Image Hover</h2>
+
+<div id="imageContainer">
+    <img id="myImage" src="https://via.placeholder.com/300" alt="Placeholder Image" onmouseover="displayMessage(true)" onmouseout="displayMessage(false)">
+    <div id="message"></div>
+</div>
+
+<script>
+function displayMessage(isMouseOver) {
+    var messageElement = document.getElementById("message");
+    if (isMouseOver) {
+        messageElement.textContent = "Hovering over the image!";
+    } else {
+        messageElement.textContent = "Mouse moved away from the image.";
+    }
+}
+</script>
+
+</body>
+</html>
